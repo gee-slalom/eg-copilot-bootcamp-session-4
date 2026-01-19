@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Slalom Capabilities Management</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="/static/styles.css" />
   </head>
   <body>
     <header>
@@ -18,31 +18,28 @@
     </header>
 
     <main>
+      <section class="controls" aria-label="Consultant controls">
+        <div class="controls-row">
+          <div class="form-group">
+            <label for="email">Your email</label>
+            <input type="email" id="email" placeholder="your-email@slalom.com" autocomplete="email" />
+          </div>
+          <div class="controls-help">
+            Use the buttons on each card to register or unregister.
+          </div>
+        </div>
+        <div id="message" class="message hidden" role="status" aria-live="polite"></div>
+      </section>
+
       <section id="capabilities-container">
-        <h3>Available Capabilities</h3>
-        <div id="capabilities-list">
+        <div class="section-header">
+          <h3>Capabilities</h3>
+          <p class="section-subtitle">Browse consulting expertise, availability, and requirements.</p>
+        </div>
+        <div id="capabilities-list" class="capabilities-grid">
           <!-- Capabilities will be loaded here -->
           <p>Loading capabilities...</p>
         </div>
-      </section>
-
-      <section id="register-container">
-        <h3>Register Your Expertise</h3>
-        <form id="register-form">
-          <div class="form-group">
-            <label for="email">Consultant Email:</label>
-            <input type="email" id="email" required placeholder="your-email@slalom.com" />
-          </div>
-          <div class="form-group">
-            <label for="capability">Select Capability:</label>
-            <select id="capability" required>
-              <option value="">-- Select a capability --</option>
-              <!-- Capability options will be loaded here -->
-            </select>
-          </div>
-          <button type="submit">Register Expertise</button>
-        </form>
-        <div id="message" class="hidden"></div>
       </section>
     </main>
 
@@ -53,6 +50,6 @@
       </div>
     </footer>
 
-    <script src="app.js"></script>
+    <script src="/static/app.js" defer></script>
   </body>
 </html>
